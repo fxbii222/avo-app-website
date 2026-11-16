@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AVO — Dating for Avoidants</title>
+  <meta name="description" content="AVO is dating for adults 18+ who need space, a slower pace, and honest boundaries. Finally, dating that gets you." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <a class="brand" href="index.html">AVO</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="safety.html">Safety</a>
+    <a href="support.html">Support</a>
+  </nav>
+  <main class="wrap">
+    <section class="hero">
+      <p>Dating for Avoidants</p>
+      <h1>Finally, Dating That Gets You.</h1>
+      <p>AVO is an international dating app for adults 18 and older who have an avoidant attachment style, or who want to date someone who does. Your space. Your pace. No swipe gestures. Likes and passes are buttons only.</p>
+    </section>
+    <div class="card">
+      <h2>What AVO is</h2>
+      <p>Attachment-aware matching from answers you give yourself. Personal boundaries. A communication pace you choose. A compatibility score that is an explanation, not a diagnosis and not a promise.</p>
+    </div>
+    <div class="card">
+      <h2>Join the waitlist</h2>
+      <p>Cities open only when there are enough people. Joining this list does not mean your city is live.</p>
+      <form id="wait">
+        <input name="email" type="email" placeholder="Email" required />
+        <input name="city" placeholder="City" required />
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <p class="note" id="done"></p>
+    </div>
+    <footer>
+      <p>AVO is operated by Fabrizio Fortunato, Dammstrasse 39, 8152 Opfikon, Switzerland.</p>
+      <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="safety.html">Safety</a> · <a href="community.html">Community guidelines</a> · <a href="support.html">Support</a></p>
+    </footer>
+  </main>
+  <script>
+    document.getElementById("wait").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(event.target).entries());
+      const key = "avo.waitlist";
+      const existing = JSON.parse(localStorage.getItem(key) || "[]");
+      existing.push({ ...data, at: new Date().toISOString() });
+      localStorage.setItem(key, JSON.stringify(existing));
+      document.getElementById("done").textContent =
+        "Saved in this browser only. A live waitlist service is not connected yet, so we cannot confirm a place in a city.";
+    });
+  </script>
+</body>
+</html>

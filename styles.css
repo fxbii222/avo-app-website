@@ -1,0 +1,49 @@
+:root {
+  --bg: #F8F6F2;
+  --surface: #ffffff;
+  --muted: #F0ECE6;
+  --text: #161616;
+  --secondary: #696969;
+  --border: #E8E5E0;
+  --button: #191919;
+  --heart: #FF6473;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.55;
+}
+a { color: var(--text); }
+.wrap { max-width: 720px; margin: 0 auto; padding: 28px 22px 80px; }
+nav {
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  padding: 18px 22px; border-bottom: 1px solid var(--border);
+}
+nav .brand { font-family: var(--serif); font-size: 28px; text-decoration: none; }
+nav a { text-decoration: none; color: var(--secondary); font-size: 14px; }
+h1, h2 { font-family: var(--serif); font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(36px, 7vw, 56px); margin: 24px 0 12px; }
+h2 { font-size: 28px; margin: 36px 0 10px; }
+p, li { color: var(--secondary); }
+.hero p { font-size: 18px; }
+form { display: grid; gap: 10px; margin: 22px 0; }
+input {
+  border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;
+  font-size: 16px; background: var(--surface);
+}
+button, .btn {
+  background: var(--button); color: #fff; border: 0; border-radius: 999px;
+  padding: 16px 22px; font-size: 16px; cursor: pointer; text-align: center;
+  text-decoration: none; display: inline-block;
+}
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 22px; margin: 18px 0;
+}
+.note { font-size: 14px; }
+footer { margin-top: 56px; font-size: 13px; color: var(--secondary); }
